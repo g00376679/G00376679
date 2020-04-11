@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reviews</ion-title>
+    <ion-buttons slot="end" (click)='close()'>
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngIf='!reviews.length'> 
+    <ion-card-content>
+      No review
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let review of reviews"> 
+    <ion-card-header>
+      <ion-card-subtitle> <a [href]='review?.url' target='_blank'>{{review?.url}}</a></ion-card-subtitle>
+      <ion-card-title>{{review?.author}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{review?.content}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

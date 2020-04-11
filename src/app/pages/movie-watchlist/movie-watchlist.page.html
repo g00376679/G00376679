@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color='light' auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Movie Watchlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let movie of watchlist; let i = index" (click)='openMovie(movie)'>
+      <ion-thumbnail slot="start">
+        <ion-img *ngIf='movie?.poster_path' src='{{image_base}}{{movie?.poster_path}}'></ion-img>
+        <ion-img *ngIf='!movie?.poster_path' src='https://via.placeholder.com/300x450'></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{movie?.title}}</ion-label>
+      <ion-button fill="outline" color='danger' slot="end" (click)='removeItem(i)'>X</ion-button>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

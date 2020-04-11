@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ movie?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='ion-padding'>
+
+  <div class="movie-data" *ngIf="movie">
+    <div class="vote">
+      <div class="text">
+        <b>{{ movie.vote_average }}</b>/10
+      </div>
+      <div class="stars">
+        <ion-icon [name]="movie.vote_average >= 2 ? 'star' : movie.vote_average >= 1 ? 'star-half' : 'star-outline'"></ion-icon>
+        <ion-icon [name]="movie.vote_average >= 4 ? 'star' : movie.vote_average >= 3 ? 'star-half' : 'star-outline'"></ion-icon>
+        <ion-icon [name]="movie.vote_average >= 6 ? 'star' : movie.vote_average >= 5 ? 'star-half' : 'star-outline'"></ion-icon>
+        <ion-icon [name]="movie.vote_average >= 8 ? 'star' : movie.vote_average >= 7 ? 'star-half' : 'star-outline'"></ion-icon>
+        <ion-icon [name]="movie.vote_average >= 10 ? 'star' : movie.vote_average >= 9 ? 'star-half' : 'star-outline'"></ion-icon>
+      </div>
+      <div class="count">{{ movie.vote_count }} votes</div>
+    </div>
+  
+  </div>
+
+  <div class="poster" *ngIf="movie">
+    <img *ngIf="movie.poster_path" class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
+  </div>
+
+  <div class="movie-data" *ngIf="movie">
+   
+    <div class="title">{{ movie.title }}</div>
+    <div class="year">{{ movie.release_date | date:'long' }}</div>
+
+    <div class="overview">{{ movie.overview }}</div>
+
+  </div>
+  <ion-button fill="solid" color="primary" (click)='openReviews()'>Read All Reviews</ion-button>
+  <ion-button fill="solid" color="danger" (click)='addReview()'>Add a Review</ion-button>
+  <ion-button fill="solid" color="warning" (click)='watch()'>Watch Trailer</ion-button>
+  <ion-button fill="solid" color="secondary"  *ngIf='canAddToWishlist' (click)='addToFavorite()'>Add to Watchlist</ion-button>
+
+</ion-content>
