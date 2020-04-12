@@ -27,7 +27,7 @@
   </div>
 
   <div class="poster" *ngIf="movie">
-    <img *ngIf="movie.poster_path" class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
+    <img class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x450';" />
   </div>
 
   <div class="movie-data" *ngIf="movie">
