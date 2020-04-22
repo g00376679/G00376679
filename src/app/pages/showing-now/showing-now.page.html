@@ -11,6 +11,8 @@
 <ion-content>
   <ion-grid>
     <ion-row>
+      <!-- show Showing Now movie list -->
+
       <ion-col sizeLg="2" sizeMd="3" sizeSm="4" sizeXs="6" *ngFor="let movie of movies" (click)='openMovie(movie)'>
         <ion-img *ngIf='movie?.poster_path' src='{{image_base}}{{movie?.poster_path}}'></ion-img>
         <ion-img *ngIf='!movie?.poster_path' src='https://via.placeholder.com/300x450'></ion-img>

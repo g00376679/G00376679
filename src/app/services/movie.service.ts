@@ -15,13 +15,13 @@ export class MovieService {
     return this.http.get(url);
   }
 
-    // get list of top rated movies
+  // get list of top rated movies
   getTopRatedMovieLists() {
     let url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}&language=en-US&page=1`;
     return this.http.get(url);
   }
 
-    // get list of upcoming movies
+  // get list of upcoming movies
   getUpcomingMovieLists() {
     let url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}&language=en-US&page=1`;
     return this.http.get(url);
@@ -45,19 +45,20 @@ export class MovieService {
     return this.http.get(url);
   }
 
-  //get latest movie
-  getLatestMovieLists(){
+  // get latest movie
+  getLatestMovieLists() {
     let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}&language=en-US&page=1`;
     return this.http.get(url);
   }
-  
-  //get reviews of movie
-  getReviewByMovie(movieid){
+
+  // get reviews of movie
+  getReviewByMovie(movieid) {
     let url = `https://api.themoviedb.org/3/movie/${movieid}/reviews?api_key=${apikey}&language=en-US&page=1`;
     return this.http.get(url);
   }
 
-  getVideos(movieId){
+  // get movie detail by movie ID
+  getVideos(movieId) {
     let url = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apikey}&language=en-US`;
     return this.http.get(url);
   }

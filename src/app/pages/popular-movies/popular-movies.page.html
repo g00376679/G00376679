@@ -10,7 +10,7 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row>       <!-- show Popular movie list -->
       <ion-col sizeLg="2" sizeMd="3" sizeSm="4" sizeXs="6" *ngFor="let movie of popular_movies"
         (click)='openMovie(movie)'>
         <ion-img *ngIf='movie?.poster_path' src='{{image_base}}{{movie?.poster_path}}'></ion-img>

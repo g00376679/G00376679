@@ -27,9 +27,9 @@
   </div>
 
   <ion-list>
+    <!-- search result -->
     <ion-item *ngFor="let movie of results" (click)='openMovie(movie)'>
       <ion-thumbnail slot="start">
-
         <ion-img *ngIf='movie?.poster_path' src='{{image_base}}{{movie?.poster_path}}'></ion-img>
         <ion-img *ngIf='!movie?.poster_path' src='https://via.placeholder.com/300x450'></ion-img>
         <!-- <ion-img src='{{image_base}}{{movie?.poster_path}}'></ion-img> -->
@@ -40,7 +40,7 @@
 
 
   <h2>Now Playing <span class='seeall-btn' (click)='toNowShowing()'>See All</span></h2>
-
+<!-- playing now movie -->
   <ion-slides [options]="slideOptsTop" #slideWithNav>
     <ion-slide *ngFor="let movie of movies_1" (click)='openMovie(movie)'>
 

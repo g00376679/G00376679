@@ -14,7 +14,7 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public appPages = [
+  public appPages = [ // page navigation
     {
       title: 'Home',
       url: 'home',
@@ -67,6 +67,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // get current page
     const path = window.location.pathname.split('/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.url.toLowerCase() === path.toLowerCase());

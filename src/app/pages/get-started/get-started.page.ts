@@ -30,7 +30,7 @@ export class GetStartedPage implements OnInit {
     private platform: Platform
 
   ) {
-
+    // change slide number per view when screen width less 500
     if (this.platform.width() < 500) {
       this.slideOptsTop.slidesPerView = 2;
     }
@@ -55,7 +55,7 @@ export class GetStartedPage implements OnInit {
     }
   }
 
-//open movie detail
+  //open movie detail
   openMovie(movie) {
     let navigationExtras: NavigationExtras = {
       state: {
@@ -66,7 +66,7 @@ export class GetStartedPage implements OnInit {
   }
 
   //see all latest movies
-  toNowShowing(){
+  toNowShowing() {
     this.router.navigate(['/showing-now'])
   }
 }

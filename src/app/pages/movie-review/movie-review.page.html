@@ -12,18 +12,18 @@
 
 <ion-content>
 
-  <ion-card *ngIf='!reviews.length'> 
+  <ion-card *ngIf='!reviews.length'>
     <ion-card-content>
       No review
     </ion-card-content>
   </ion-card>
-
-  <ion-card *ngFor="let review of reviews"> 
+  <!-- show all review -->
+  <ion-card *ngFor="let review of reviews">
     <ion-card-header>
       <ion-card-subtitle> <a [href]='review?.url' target='_blank'>{{review?.url}}</a></ion-card-subtitle>
       <ion-card-title>{{review?.author}}</ion-card-title>
     </ion-card-header>
-  
+
     <ion-card-content>
       {{review?.content}}
     </ion-card-content>

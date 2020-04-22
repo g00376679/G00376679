@@ -37,10 +37,11 @@ export class MovieDetailsPage implements OnInit {
   }
 
   ngOnInit() {
+    // check movie wishlist
     this.checkMovie();
   }
 
-  //check if movie in wishlist
+  //check movie in wishlist
   checkMovie() {
     this.storage.get('watchlist').then((val: any[]) => {
       if (Array.isArray(val)) {

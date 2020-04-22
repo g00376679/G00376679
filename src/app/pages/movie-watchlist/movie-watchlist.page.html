@@ -11,7 +11,7 @@
 
 <ion-content>
 
-  <ion-list>
+  <ion-list>       <!-- show  movie watchlist -->
     <ion-item *ngFor="let movie of watchlist; let i = index" (click)='openMovie(movie)'>
       <ion-thumbnail slot="start">
         <ion-img *ngIf='movie?.poster_path' src='{{image_base}}{{movie?.poster_path}}'></ion-img>

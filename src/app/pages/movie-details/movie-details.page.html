@@ -14,6 +14,7 @@
       <div class="text">
         <b>{{ movie.vote_average }}</b>/10
       </div>
+      <!-- movie rating -->
       <div class="stars">
         <ion-icon [name]="movie.vote_average >= 2 ? 'star' : movie.vote_average >= 1 ? 'star-half' : 'star-outline'"></ion-icon>
         <ion-icon [name]="movie.vote_average >= 4 ? 'star' : movie.vote_average >= 3 ? 'star-half' : 'star-outline'"></ion-icon>
@@ -25,8 +26,8 @@
     </div>
   
   </div>
-
-  <div class="poster" *ngIf="movie">
+<!-- movie detail -->
+  <div class="poster" *ngIf="movie"> 
     <img class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x450';" />
   </div>
 
@@ -38,6 +39,7 @@
     <div class="overview">{{ movie.overview }}</div>
 
   </div>
+  <!-- action button -->
   <ion-button fill="solid" color="primary" (click)='openReviews()'>Read All Reviews</ion-button>
   <ion-button fill="solid" color="danger" (click)='addReview()'>Add a Review</ion-button>
   <ion-button fill="solid" color="warning" (click)='watch()'>Watch Trailer</ion-button>
